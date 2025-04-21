@@ -1,28 +1,28 @@
-src/
-│
-├── domain/                # Lógica de negocio (independiente de React)
-│   ├── models/            # Entidades/Tipos (ej: `User.ts`, `Policy.ts`)
-│   ├── ports/             # Interfaces/contratos (ej: `AuthRepository.ts`)
-│   └── use-cases/         # Lógica de aplicación (ej: `LoginUseCase.ts`)
-│
-├── infrastructure/        # Implementaciones concretas
-│   ├── services/          # Conexiones a APIs (ej: `AuthService.ts`)
-│   └── storage/           # Manejo de localStorage/sessionStorage
-│
-├── application/           # Adaptadores para la UI
-│   ├── contexts/          # Contextos de React (ej: `AuthContext.tsx`)
-│   ├── hooks/             # Custom hooks (ej: `useAuth.ts`)
-│   └── utils/             # Adaptadores de datos (ej: `policyMapper.ts`)
-│
-├── presentation/          # Capa de UI (React)
-│   ├── components/        # Componentes reutilizables
-│   │   ├── ui/            # Componentes "tontos" (ej: `Button.tsx`)
-│   │   └── features/      # Componentes con lógica (ej: `PolicyCard.tsx`)
-│   ├── pages/             # Páginas/rutas (ej: `LoginPage.tsx`)
-│   └── assets/            # Imágenes, estilos globales
-│
-├── shared/                # Utilidades comunes
-│   ├── constants/         # (ej: `routes.ts`)
-│   └── styles/            # Config de Tailwind/global CSS
-│
-└── App.tsx                # Entrada principal
+
+## Explicación de Carpetas
+
+- **domain/**: Contiene toda la lógica de negocio independiente del framework
+  - `models/`: Definiciones de tipos e interfaces
+  - `ports/`: Contratos/interfaces para implementaciones externas
+  - `use-cases/`: Casos de uso principales de la aplicación
+
+- **infrastructure/**: Implementaciones concretas de los puertos definidos
+  - `services/`: Conexiones con APIs externas
+  - `storage/`: Manejo de almacenamiento local
+
+- **application/**: Capa que adapta el dominio a la UI
+  - `contexts/`: Estado global de React
+  - `hooks/`: Custom hooks reutilizables
+  - `utils/`: Funciones de transformación de datos
+
+- **presentation/**: Componentes de UI
+  - `components/ui/`: Componentes presentacionales (sin estado)
+  - `components/features/`: Componentes con lógica específica
+  - `pages/`: Componentes de páginas/rutas
+  - `assets/`: Recursos estáticos
+
+- **shared/**: Utilidades compartidas
+  - `constants/`: Constantes de la aplicación
+  - `styles/`: Configuración de estilos globales
+
+- **App.tsx**: Componente raíz de la aplicación
